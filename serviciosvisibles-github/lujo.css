@@ -128,11 +128,14 @@ footer h5 { color: var(--sv-oro) !important; }
 .hero-glow-blob:nth-child(2) { background: radial-gradient(circle, rgba(255, 154, 60, .18) 0%, transparent 70%) !important; }
 
 /* ---------- Banner con iconos 3D ---------- */
-.bn a { position: relative; display: block; }
+.bn-wrap { position: relative; }
 .bn-icons {
   position: absolute; left: 4%; right: 4%; top: 69%; bottom: 3%;
   display: flex; align-items: center; justify-content: space-around; pointer-events: none;
 }
+a.bn-item { pointer-events: auto; text-decoration: none; border-radius: 14px; padding: 4px 6px; transition: transform .2s, background .2s; }
+a.bn-item:hover, a.bn-item:focus-visible { transform: translateY(-3px) scale(1.06); background: rgba(5, 10, 23, .35); outline: none; }
+a.bn-item:focus-visible { box-shadow: 0 0 0 2px var(--sv-oro); }
 .bn-item { display: flex; flex-direction: column; align-items: center; gap: .3em; font: 700 clamp(11px, 3.1vw, 22px)/1 'Outfit', sans-serif; color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, .8); }
 .bn-item img {
   width: clamp(34px, 9.5vw, 60px); height: auto;
@@ -152,3 +155,30 @@ footer h5 { color: var(--sv-oro) !important; }
 ::selection { background: var(--sv-oro); color: #050a17; }
 html { scrollbar-color: #f5c46b #050a17; }
 @media (prefers-reduced-motion: reduce) { .bn-item img { animation: none; } html body h1 { transform: none; } }
+
+/* ---------- Reseñas ---------- */
+.resena-estrellas { display: inline-flex; flex-direction: row-reverse; gap: 6px; }
+.resena-estrellas input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.resena-estrellas label { font-size: 32px; line-height: 1; color: rgba(255, 255, 255, .18); cursor: pointer; transition: color .15s, transform .15s; }
+.resena-estrellas label:hover, .resena-estrellas label:hover ~ label, .resena-estrellas input:checked ~ label { color: var(--sv-oro); }
+.resena-estrellas label:hover { transform: scale(1.15); }
+.resena-estrellas input:focus-visible + label { outline: 2px solid var(--sv-cian); outline-offset: 3px; border-radius: 6px; }
+.resena-oro { color: var(--sv-oro); letter-spacing: 2px; text-shadow: 0 0 12px rgba(245, 196, 107, .35); }
+.resena-avatar { width: 40px; height: 40px; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; color: #050a17; background: var(--sv-grad-oro); flex-shrink: 0; }
+
+/* ---------- Servicios en detalle ---------- */
+.sd-ficha { scroll-margin-top: 90px; }
+.sd-icono { width: clamp(56px, 12vw, 84px); height: auto; filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .55)); flex-shrink: 0; }
+.sd-num { font: 700 12px/1 'Space Grotesk', sans-serif; letter-spacing: .18em; text-transform: uppercase; color: var(--sv-oro); margin-bottom: 6px; }
+.sd-ficha h2::after { width: min(200px, 60%); margin-top: 10px; }
+.sd-sub { font: 700 13px/1.2 'Outfit', sans-serif !important; letter-spacing: .12em !important; text-transform: uppercase; color: var(--sv-oro); margin-bottom: 12px; }
+.sd-prob { border: 1px solid rgba(255, 255, 255, .07); border-radius: 14px; padding: 12px 14px; background: rgba(5, 10, 23, .35); }
+.sd-prob p { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5; }
+.sd-prob i { margin-top: 4px; width: 14px; flex-shrink: 0; }
+.sd-no { color: #94a3b8; } .sd-no i { color: #f87171; }
+.sd-si { color: #fff; font-weight: 600; margin-top: 6px; } .sd-si i { color: var(--sv-cian); }
+.sd-chip { font-size: 12px; font-weight: 600; color: #e2e8f0; padding: 6px 12px; border-radius: 999px; background: rgba(34, 211, 238, .08); border: 1px solid rgba(34, 211, 238, .25); }
+.sd-precio { font: 400 22px/1.2 'Permanent Marker', cursive; background: var(--sv-grad-oro); -webkit-background-clip: text; background-clip: text; color: transparent; transform: rotate(-1.5deg); }
+.sd-saltos { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.sd-saltos a { font-size: 13px; font-weight: 700; color: var(--sv-oro); padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(245, 196, 107, .35); background: rgba(11, 23, 51, .6); text-decoration: none; }
+.sd-saltos a:hover { background: rgba(245, 196, 107, .15); }
