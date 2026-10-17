@@ -182,3 +182,45 @@ html { scrollbar-color: #f5c46b #050a17; }
 .sd-saltos { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .sd-saltos a { font-size: 13px; font-weight: 700; color: var(--sv-oro); padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(245, 196, 107, .35); background: rgba(11, 23, 51, .6); text-decoration: none; }
 .sd-saltos a:hover { background: rgba(245, 196, 107, .15); }
+
+/* ---------- Botón de menú holográfico ---------- */
+.holo-btn {
+  position: relative; width: 48px; height: 48px; border-radius: 14px; border: 0; padding: 0; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; isolation: isolate;
+  background: conic-gradient(from var(--holo-a, 0deg), #22d3ee, #a78bfa, #f472b6, #f5c46b, #34d399, #22d3ee);
+  animation: holo-giro 4s linear infinite;
+  box-shadow: 0 0 18px rgba(34, 211, 238, .45), 0 0 34px rgba(167, 139, 250, .25);
+}
+.holo-btn::before {
+  content: ""; position: absolute; inset: 2px; border-radius: 12px; z-index: -1;
+  background: radial-gradient(120% 120% at 30% 20%, rgba(34, 211, 238, .22), transparent 55%),
+              linear-gradient(160deg, #0b1733, #050a17);
+}
+.holo-btn::after {
+  content: ""; position: absolute; inset: 2px; border-radius: 12px; z-index: -1; pointer-events: none;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, .22) 45%, transparent 60%);
+  background-size: 250% 100%; animation: holo-brillo 3s ease-in-out infinite;
+}
+.holo-ico { position: relative; width: 20px; height: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; transition: transform .35s ease; }
+.holo-ico i {
+  display: block; border-radius: 3px;
+  background: linear-gradient(135deg, #a5f3fc, #22d3ee 45%, #c4b5fd);
+  box-shadow: 0 0 6px rgba(34, 211, 238, .9), 0 0 12px rgba(167, 139, 250, .5);
+  transition: transform .35s ease, border-radius .35s ease, opacity .35s ease;
+}
+.holo-ico i:nth-child(2) { animation: holo-pulso 2.4s ease-in-out infinite; }
+.holo-ico i:nth-child(3) { animation: holo-pulso 2.4s ease-in-out .8s infinite; }
+.holo-btn:hover .holo-ico { transform: rotate(45deg) scale(1.05); }
+.holo-btn.is-open .holo-ico { transform: rotate(45deg); }
+.holo-btn.is-open .holo-ico i { border-radius: 50%; }
+.holo-btn.is-open .holo-ico i:nth-child(1) { transform: translate(4px, 4px) scale(.55); }
+.holo-btn.is-open .holo-ico i:nth-child(2) { transform: translate(-4px, 4px) scale(.55); }
+.holo-btn.is-open .holo-ico i:nth-child(3) { transform: translate(4px, -4px) scale(.55); }
+.holo-btn.is-open .holo-ico i:nth-child(4) { transform: translate(-4px, -4px) scale(.55); }
+.holo-btn:focus-visible { outline: 2px solid var(--sv-oro); outline-offset: 3px; }
+@property --holo-a { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+@keyframes holo-giro { to { --holo-a: 360deg; } }
+@keyframes holo-brillo { 0%, 100% { background-position: 120% 0; } 50% { background-position: -20% 0; } }
+@keyframes holo-pulso { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
+@media (min-width: 768px) { .holo-btn { display: none; } }
+@media (prefers-reduced-motion: reduce) { .holo-btn, .holo-btn::after, .holo-ico i { animation: none !important; } }
