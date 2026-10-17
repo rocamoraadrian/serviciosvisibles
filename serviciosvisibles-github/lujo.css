@@ -41,6 +41,7 @@ html body :is(h1, h2), html body :is(h1, h2)[class] {
   text-shadow: 0 3px 0 rgba(0, 0, 0, .35), 0 0 28px rgba(34, 211, 238, .12);
 }
 html body h1 { transform: rotate(-1.5deg); transform-origin: left center; }
+html body :is(h1, h2) span, html body :is(h1, h2) span[class] { font-family: inherit !important; }
 html body h1 span[class*="bg-clip-text"], html body h2 .sv-tag {
   background-image: var(--sv-grad-click) !important;
   -webkit-background-clip: text !important; background-clip: text !important;
