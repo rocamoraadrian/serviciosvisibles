@@ -27,6 +27,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://serviciosvisibles.com/#negocio", "name": "Servicios Visibles", "url": "https://serviciosvisibles.com/", "image": "https://serviciosvisibles.com/og-image.png", "logo": "https://serviciosvisibles.com/favicon.svg", "description": "Creo páginas web, aplicaciones y automatizaciones a medida para negocios y autónomos en España. Presupuesto adaptado, trato directo y respuesta en menos de 24 h por WhatsApp.", "telephone": "+34617981198", "email": "webspain2026@gmail.com", "areaServed": {"@type": "Country", "name": "España"}, "address": {"@type": "PostalAddress", "addressCountry": "ES"}, "knowsLanguage": "es", "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diseño y creación de páginas web"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 150, "priceCurrency": "EUR"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Aplicaciones personalizadas"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Automatizaciones"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mantenimiento de páginas web"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gestión de redes sociales"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Publicidad digital"}}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuánto cuesta una página web?", "acceptedAnswer": {"@type": "Answer", "text": "Las webs empiezan desde 150 €, en un solo pago. El precio final depende de lo que necesites: número de secciones, textos, reservas, pagos online… Rellenas el formulario en dos minutos y te envío un presupuesto cerrado, sin costes escondidos."}}, {"@type": "Question", "name": "¿Cuánto se tarda en tener la web lista?", "acceptedAnswer": {"@type": "Answer", "text": "Lo marca el tamaño del proyecto. En la propuesta te doy una fecha de entrega concreta antes de empezar."}}, {"@type": "Question", "name": "¿Tengo que tener dominio y hosting?", "acceptedAnswer": {"@type": "Answer", "text": "No. Si no los tienes, me encargo yo de todo: registro del dominio, alojamiento y certificado SSL."}}, {"@type": "Question", "name": "¿La web será mía?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El dominio, los textos y el contenido son tuyos. Si un día quieres cambiar de proveedor, te lo entrego todo."}}, {"@type": "Question", "name": "¿Qué pasa después de publicar la web?", "acceptedAnswer": {"@type": "Answer", "text": "No desaparezco. Ofrezco mantenimiento para que la web siga rápida, segura y actualizada, y te ayudo con cambios y mejoras."}}, {"@type": "Question", "name": "¿Trabajas con negocios de toda España?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Trabajo en remoto con negocios y autónomos de cualquier ciudad. Hablamos por WhatsApp, teléfono o videollamada."}}]}]}</script>
 <!-- Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -274,7 +275,8 @@ h1 {
 .tracking-wider, .uppercase {
   font-family: 'Space Grotesk', 'Outfit', sans-serif !important;
 }
-</style></head>
+</style><link href="lujo.css?v=1" rel="stylesheet">
+</head>
 <body class="antialiased selection:bg-blue-500 selection:text-black">
 <!-- BEGIN: NavigationBar -->
 <header class="sticky top-0 z-50 bg-[#05070e]/90 backdrop-blur-md border-b border-[#10192f]">
@@ -322,12 +324,21 @@ h1 {
 <!-- END: NavigationBar -->
 <main id="inicio">
 <!-- BEGIN: Banner -->
-<section aria-label="Servicios Visibles en un click" class="bg-[#05070e]">
-<a href="#presupuesto" class="block" aria-label="Pedir presupuesto">
+<section aria-label="Servicios Visibles en un click" class="bn bg-[#05070e]">
+<a href="#presupuesto" aria-label="Pedir presupuesto">
 <picture>
-<source media="(max-width: 767px)" srcset="banner-movil.webp" width="900" height="523">
-<img src="banner.webp" width="1600" height="533" alt="Servicios Visibles en un click: web, marketing, apps y automatizaciones" class="block w-full h-auto" fetchpriority="high" decoding="async">
+<source media="(max-width: 767px)" srcset="banner-movil-v2.webp" width="900" height="523">
+<img src="banner-v2.webp" width="1600" height="533" alt="Servicios Visibles en un click: web, marketing, apps y automatizaciones" class="block w-full h-auto" fetchpriority="high" decoding="async">
 </picture>
+<span class="bn-icons" aria-hidden="true">
+<span class="bn-item"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Globe%20with%20meridians/3D/globe_with_meridians_3d.png" alt="" width="256" height="256" decoding="async">Web</span>
+<i class="bn-sep"></i>
+<span class="bn-item"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Megaphone/3D/megaphone_3d.png" alt="" width="256" height="256" decoding="async">Marketing</span>
+<i class="bn-sep"></i>
+<span class="bn-item"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Mobile%20phone/3D/mobile_phone_3d.png" alt="" width="256" height="256" decoding="async">Apps</span>
+<i class="bn-sep"></i>
+<span class="bn-item"><img src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Gear/3D/gear_3d.png" alt="" width="256" height="256" decoding="async">Automatizaciones</span>
+</span>
 </a>
 </section>
 <!-- END: Banner -->
