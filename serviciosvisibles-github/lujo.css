@@ -1,0 +1,153 @@
+/* ==========================================================
+   Servicios Visibles — tema "Graffiti de lujo"
+   Paleta sacada del banner: noche azul marino, amanecer
+   naranja/oro, trazo blanco y degradado cian→azul del "CLICK".
+   ========================================================== */
+:root {
+  --sv-noche: #050a17;
+  --sv-marino: #0b1733;
+  --sv-marino-2: #12234a;
+  --sv-oro: #f5c46b;
+  --sv-naranja: #ff9a3c;
+  --sv-cian: #22d3ee;
+  --sv-azul: #3b82f6;
+  --sv-grad-click: linear-gradient(95deg, #22d3ee 0%, #38bdf8 45%, #3b82f6 100%);
+  --sv-grad-oro: linear-gradient(95deg, #ffd88a 0%, #f5c46b 40%, #ff9a3c 100%);
+}
+
+/* ---------- Fondo: noche + amanecer + textura spray ---------- */
+html body {
+  background-color: var(--sv-noche) !important;
+  background-image:
+    radial-gradient(900px 520px at 92% -5%, rgba(255, 154, 60, .16), transparent 60%),
+    radial-gradient(800px 600px at -10% 35%, rgba(59, 130, 246, .14), transparent 60%),
+    radial-gradient(rgba(255, 255, 255, .035) 1px, transparent 1.4px) !important;
+  background-size: auto, auto, 5px 5px !important;
+  background-attachment: fixed, fixed, scroll !important;
+}
+main > section, footer { background-color: transparent !important; }
+main > section:nth-of-type(odd):not(.bn) {
+  background-image: linear-gradient(180deg, rgba(18, 35, 74, .38), rgba(5, 10, 23, 0) 70%) !important;
+}
+[class*="border-[#"] { border-color: rgba(245, 196, 107, .12) !important; }
+
+/* ---------- Tipografía graffiti ---------- */
+html body h1, html body h2 {
+  font-family: 'Permanent Marker', 'Outfit', cursive !important;
+  font-weight: 400 !important;
+  letter-spacing: .01em !important;
+  line-height: 1.12 !important;
+  text-transform: uppercase;
+  text-shadow: 0 3px 0 rgba(0, 0, 0, .35), 0 0 28px rgba(34, 211, 238, .12);
+}
+html body h1 { transform: rotate(-1.5deg); transform-origin: left center; }
+html body h1 span[class*="bg-clip-text"], html body h2 .sv-tag {
+  background-image: var(--sv-grad-click) !important;
+  -webkit-background-clip: text !important; background-clip: text !important;
+  color: transparent !important;
+  filter: drop-shadow(0 0 18px rgba(34, 211, 238, .35));
+}
+/* Trazo de brocha dorado bajo cada título de sección */
+html body h2::after {
+  content: ""; display: block; height: 16px; width: min(280px, 70%);
+  margin: 14px 0 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 22' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23ffd88a'/%3E%3Cstop offset='.45' stop-color='%23f5c46b'/%3E%3Cstop offset='1' stop-color='%23ff9a3c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M3 12C38 5 92 14 150 8s110-6 146 1l-3 6c-40-4-96 2-150 5S32 18 6 18z'/%3E%3Cpath fill='url(%23g)' opacity='.55' d='M40 18c60-3 140-2 210-5l-2 3c-70 3-150 3-206 4z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+html body .text-center h2::after, html body h2.text-center::after { margin-left: auto; margin-right: auto; }
+html body h3, html body h4, html body h5 { font-family: 'Outfit', sans-serif !important; letter-spacing: 0 !important; }
+
+/* ---------- Etiquetas tipo "tag" ---------- */
+.badge-pill {
+  background: linear-gradient(180deg, #12234a, #0b1733) !important;
+  border: 1px solid rgba(245, 196, 107, .45) !important;
+  color: var(--sv-oro) !important;
+  transform: rotate(-2deg);
+  box-shadow: 0 6px 18px -8px rgba(245, 196, 107, .45), inset 0 1px 0 rgba(255, 255, 255, .06);
+}
+.badge-dot { background: var(--sv-naranja) !important; box-shadow: 0 0 10px var(--sv-naranja) !important; }
+
+/* ---------- Botones principales: degradado "CLICK" ---------- */
+[class*="bg-[#3b9eff]"] {
+  background-image: var(--sv-grad-click) !important;
+  color: #04101f !important;
+  box-shadow: 0 10px 30px -8px rgba(34, 211, 238, .55), inset 0 0 0 1px rgba(255, 255, 255, .25) !important;
+}
+[class*="bg-[#3b9eff]"]:hover { filter: brightness(1.08) saturate(1.1); transform: translateY(-1px); }
+.text-blue-400 { color: #38bdf8 !important; }
+.text-blue-300 { color: #7dd3fc !important; }
+
+/* ---------- Tarjetas de cristal con filo dorado ---------- */
+.card-dark-gradient {
+  background: linear-gradient(160deg, rgba(20, 38, 78, .72) 0%, rgba(8, 14, 32, .92) 100%) !important;
+  border: 1px solid rgba(245, 196, 107, .16) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 24px 48px -24px rgba(0, 0, 0, .7) !important;
+  backdrop-filter: blur(6px);
+}
+.card-dark-gradient:hover {
+  border-color: rgba(245, 196, 107, .5) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 28px 60px -24px rgba(245, 196, 107, .25) !important;
+}
+.card-dark-gradient .w-12, .card-dark-gradient .w-10, .card-dark-gradient .w-9 {
+  background: linear-gradient(145deg, rgba(245, 196, 107, .18), rgba(255, 154, 60, .06)) !important;
+  border: 1px solid rgba(245, 196, 107, .35) !important;
+  color: var(--sv-oro) !important;
+}
+.card-dark-gradient .w-12 i, .card-dark-gradient .w-10 i, .card-dark-gradient .w-9 i { color: var(--sv-oro) !important; }
+
+/* ---------- Cabecera y pie ---------- */
+header.sticky {
+  background: rgba(5, 10, 23, .82) !important;
+  border-bottom: 1px solid rgba(245, 196, 107, .22) !important;
+  backdrop-filter: blur(14px) saturate(140%);
+}
+footer { border-top: 1px solid rgba(245, 196, 107, .22) !important; background: #03060f !important; }
+footer h5 { color: var(--sv-oro) !important; }
+
+/* ---------- Banda final con cielo de amanecer ---------- */
+[class*="from-[#2f7fe8]"] {
+  background-image:
+    radial-gradient(500px 260px at 88% 10%, rgba(255, 216, 138, .55), transparent 60%),
+    linear-gradient(115deg, #0b1733 0%, #1e3a8a 48%, #c2410c 82%, #ff9a3c 100%) !important;
+  border: 1px solid rgba(245, 196, 107, .35);
+}
+[class*="from-[#2f7fe8]"] h2, [class*="from-[#2f7fe8]"] p { color: #fff !important; }
+[class*="from-[#2f7fe8]"] i.fa-laptop-code { color: #fff !important; }
+
+/* ---------- Formulario ---------- */
+.idea-progress-step.idea-progress-active .idea-progress-dot,
+.pill-option.pill-selected, .btn-budget.active {
+  background-image: var(--sv-grad-click) !important; color: #04101f !important; border-color: transparent !important;
+}
+.idea-type-card.selected { border-color: var(--sv-oro) !important; box-shadow: 0 0 0 1px var(--sv-oro), 0 12px 30px -10px rgba(245, 196, 107, .4) !important; }
+.faq-item[open] { border-color: rgba(245, 196, 107, .45) !important; }
+.faq-icon { color: var(--sv-oro) !important; border-color: rgba(245, 196, 107, .35) !important; }
+
+/* ---------- Brillos del hero ---------- */
+.hero-glow-blob:first-child { background: radial-gradient(circle, rgba(59, 130, 246, .22) 0%, transparent 70%) !important; }
+.hero-glow-blob:nth-child(2) { background: radial-gradient(circle, rgba(255, 154, 60, .18) 0%, transparent 70%) !important; }
+
+/* ---------- Banner con iconos 3D ---------- */
+.bn a { position: relative; display: block; }
+.bn-icons {
+  position: absolute; left: 4%; right: 4%; top: 69%; bottom: 3%;
+  display: flex; align-items: center; justify-content: space-around; pointer-events: none;
+}
+.bn-item { display: flex; flex-direction: column; align-items: center; gap: .3em; font: 700 clamp(11px, 3.1vw, 22px)/1 'Outfit', sans-serif; color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, .8); }
+.bn-item img {
+  width: clamp(34px, 9.5vw, 60px); height: auto;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .55)) drop-shadow(0 0 12px rgba(34, 211, 238, .25));
+  animation: sv-flota 4s ease-in-out infinite;
+}
+.bn-item:nth-child(3) img { animation-delay: .5s; } .bn-item:nth-child(5) img { animation-delay: 1s; } .bn-item:nth-child(7) img { animation-delay: 1.5s; }
+.bn-sep { width: 1px; align-self: stretch; margin: 6% 0; background: linear-gradient(transparent, rgba(255, 255, 255, .7), transparent); }
+@media (min-width: 768px) {
+  .bn-icons { left: 25%; right: 24%; top: 67%; bottom: 5%; }
+  .bn-item { font-size: clamp(13px, 1.35vw, 26px); }
+  .bn-item img { width: clamp(44px, 4.4vw, 88px); }
+}
+@keyframes sv-flota { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+/* ---------- Detalles ---------- */
+::selection { background: var(--sv-oro); color: #050a17; }
+html { scrollbar-color: #f5c46b #050a17; }
+@media (prefers-reduced-motion: reduce) { .bn-item img { animation: none; } html body h1 { transform: none; } }
